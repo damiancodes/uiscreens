@@ -32,9 +32,11 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun Register_Screen(modifier: Modifier = Modifier) {
+fun Register_Screen(navController: NavController) {
     var FirstName by remember { mutableStateOf(TextFieldValue("")) }
     var LastName by remember { mutableStateOf(TextFieldValue("")) }
     var password by remember { mutableStateOf(TextFieldValue("")) }
@@ -128,6 +130,5 @@ fun Register_Screen(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun Register_Preview() {
-    Register_Screen()
-    
+
 }

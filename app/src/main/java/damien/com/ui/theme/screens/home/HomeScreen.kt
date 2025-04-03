@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 
@@ -26,6 +27,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import damien.com.R
+import damien.com.navigation.ROUTE_LOGIN
+import damien.com.navigation.ROUTE_REGISTER
 
 @Composable
 fun Home_Screen(navController: NavController) {
@@ -47,18 +50,19 @@ fun Home_Screen(navController: NavController) {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(300.dp)
+
         )
 
         Text(
             text = " sign up or login",
-            fontSize = 20.sp,
+            fontSize = 30.sp,
             fontFamily = FontFamily.SansSerif,
             color = Color.Black,
             fontStyle = FontStyle.Normal,
         )
 
        Spacer(modifier = Modifier.height(40.dp))
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = { navController.navigate(ROUTE_LOGIN) },
         modifier = Modifier.width(250.dp)) {
             Text(text = "Login",
             color = Color.White,
@@ -69,8 +73,9 @@ fun Home_Screen(navController: NavController) {
             )
 
             }
+
         Spacer(modifier = Modifier.height(40.dp))
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = { navController.navigate(ROUTE_REGISTER) },
             modifier = Modifier.width(250.dp)) {
             Text(text = "Register",
                 color = Color.White,
@@ -80,11 +85,6 @@ fun Home_Screen(navController: NavController) {
 
                 )
         }
-
-
-
-
-
 
     }
 

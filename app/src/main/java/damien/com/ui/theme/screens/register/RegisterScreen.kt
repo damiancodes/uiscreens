@@ -1,6 +1,7 @@
 package damien.com.ui.theme.screens.register
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -34,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import damien.com.navigation.ROUTE_LOGIN
 
 @Composable
 fun Register_Screen(navController: NavController) {
@@ -69,6 +71,7 @@ fun Register_Screen(navController: NavController) {
                 .padding(8.dp),
             shape = RoundedCornerShape(20.dp)
         )
+
         Spacer(modifier = Modifier.height(20.dp))
         OutlinedTextField(
             value = FirstName,
@@ -118,6 +121,19 @@ fun Register_Screen(navController: NavController) {
             )
 
         }
+        Spacer(modifier = Modifier.height(20.dp))
+        Text(text = "Already have an account? Login",
+            color = Color.Blue,
+            fontFamily = FontFamily.SansSerif,
+            fontStyle = FontStyle.Italic,
+            fontSize = 20.sp,
+            modifier = Modifier
+                .padding(8.dp)
+                .clickable{
+                    navController.navigate(ROUTE_LOGIN)
+                }
+        )
+
 
 
 
@@ -130,5 +146,6 @@ fun Register_Screen(navController: NavController) {
 @Preview
 @Composable
 private fun Register_Preview() {
+    Register_Screen(rememberNavController())
 
 }

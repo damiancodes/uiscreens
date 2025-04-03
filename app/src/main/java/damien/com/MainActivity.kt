@@ -20,13 +20,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SafarilabsTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    AppNavHost(
+                AppNavHost()
 
-                    )
-                }
             }
         }
     }
-}
 
+}

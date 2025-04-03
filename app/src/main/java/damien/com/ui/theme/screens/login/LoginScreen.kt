@@ -2,6 +2,7 @@ package damien.com.ui.theme.screens.login
 
 import android.R.attr.label
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -33,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import damien.com.navigation.ROUTE_REGISTER
 
 @Composable
 fun Login_Screen(navController: NavController) {
@@ -49,11 +51,11 @@ fun Login_Screen(navController: NavController) {
             color = Color.Red,
             fontFamily = FontFamily.Cursive,
             fontSize = 50.sp,
-            fontStyle = FontStyle.Italic,
+            fontStyle = FontStyle.Normal,
             fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
 
         )
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(20.dp))
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
@@ -80,7 +82,7 @@ fun Login_Screen(navController: NavController) {
         Spacer(modifier = Modifier.height(30.dp))
 
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         Button(
             onClick = { /*TODO*/ },
             modifier = Modifier.width(250.dp)
@@ -94,6 +96,18 @@ fun Login_Screen(navController: NavController) {
             )
 
         }
+        Spacer(modifier = Modifier.height(30.dp))
+        Text(text = "Don't have an account? Register",
+            color = Color.Blue,
+            fontFamily = FontFamily.SansSerif,
+            fontStyle = FontStyle.Italic,
+            fontSize = 20.sp,
+            modifier = Modifier
+                .padding(8.dp)
+                .clickable{
+                    navController.navigate(ROUTE_REGISTER)
+                }
+        )
 
     }
     }

@@ -110,7 +110,7 @@ fun Login_Screen(navController: NavController) {
         )
 
     }
-    }
+}
 
 @Preview
 @Composable

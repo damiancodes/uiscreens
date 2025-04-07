@@ -36,7 +36,8 @@ fun AppNavHost(
             Home_Screen(navController)
         }
         composable (ROUTE_DASHBOARD){
-            Dashboard_Screen(navController)
+
+            Dashboard_Screen()
         }
     }
 }

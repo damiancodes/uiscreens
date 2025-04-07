@@ -1,5 +1,6 @@
 package damien.com.navigation
 
+import Dashboard_Screen
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -33,6 +34,9 @@ fun AppNavHost(
         }
         composable(ROUTE_HOME) {
             Home_Screen(navController)
+        }
+        composable (ROUTE_DASHBOARD){
+            Dashboard_Screen(navController)
         }
     }
 }

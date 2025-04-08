@@ -16,7 +16,7 @@ import damien.com.ui.theme.screens.splash.SplashScreen
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUTE_SPLASH
+    startDestination: String = ROUTE_HOME
 ) {
     NavHost(
         navController = navController,

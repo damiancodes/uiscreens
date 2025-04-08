@@ -45,7 +45,7 @@ fun Dashboard_Screen(viewModel: DashboardViewModel=
                 .padding(16.dp)
         ) {
             Text(
-                text = "Welcome Back, Erick 👋",
+                text = "Welcome Back, Damian 👋",
                 style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold)
             )
 

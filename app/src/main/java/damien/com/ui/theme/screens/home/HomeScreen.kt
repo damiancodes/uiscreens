@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import damien.com.R
+import damien.com.navigation.ROUTE_DASHBOARD
 import damien.com.navigation.ROUTE_LOGIN
 import damien.com.navigation.ROUTE_REGISTER
 
@@ -36,7 +37,7 @@ fun Home_Screen(navController: NavController) {
         .fillMaxSize()
         .background(Color.White),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,){
+        verticalArrangement = Arrangement.Center,) {
         Text(
             text = "Safari App",
             fontSize = 30.sp,
@@ -45,7 +46,8 @@ fun Home_Screen(navController: NavController) {
             fontStyle = FontStyle.Normal,
         )
         Spacer(modifier = Modifier.height(20.dp))
-        Image(painter = painterResource(id = R.drawable.appdev),
+        Image(
+            painter = painterResource(id = R.drawable.appdev),
             contentDescription = "image of app dev",
             modifier = Modifier
                 .fillMaxWidth()
@@ -61,34 +63,54 @@ fun Home_Screen(navController: NavController) {
             fontStyle = FontStyle.Normal,
         )
 
-       Spacer(modifier = Modifier.height(40.dp))
-        Button(onClick = { navController.navigate(ROUTE_LOGIN) },
-        modifier = Modifier.width(250.dp)) {
-            Text(text = "Login",
-            color = Color.White,
-            fontSize = 25.sp,
-            fontFamily = FontFamily.SansSerif,
-            fontStyle = FontStyle.Italic,
-
-            )
-
-            }
-
         Spacer(modifier = Modifier.height(40.dp))
-        Button(onClick = { navController.navigate(ROUTE_REGISTER) },
-            modifier = Modifier.width(250.dp)) {
-            Text(text = "Register",
+        Button(
+            onClick = { navController.navigate(ROUTE_LOGIN) },
+            modifier = Modifier.width(250.dp)
+        ) {
+            Text(
+                text = "Login",
                 color = Color.White,
                 fontSize = 25.sp,
                 fontFamily = FontFamily.SansSerif,
                 fontStyle = FontStyle.Italic,
 
                 )
+
+        }
+
+        Spacer(modifier = Modifier.height(40.dp))
+        Button(
+            onClick = { navController.navigate(ROUTE_REGISTER) },
+            modifier = Modifier.width(250.dp)
+        ) {
+            Text(
+                text = "Register",
+                color = Color.White,
+                fontSize = 25.sp,
+                fontFamily = FontFamily.SansSerif,
+                fontStyle = FontStyle.Italic,
+
+                )
+
+        }
+        Spacer(modifier = Modifier.height(40.dp))
+        Button(
+            onClick = { navController.navigate(ROUTE_DASHBOARD) },
+            modifier = Modifier.width(250.dp)
+        ) {
+            Text(
+                text = "Dashboard",
+                color = Color.White,
+                fontSize = 25.sp,
+                fontFamily = FontFamily.SansSerif,
+                fontStyle = FontStyle.Italic,
+
+                )
+
         }
 
     }
-
-
 
 }
 
